@@ -22,7 +22,7 @@ def handle_books():
                 "title": book.title,
                 "description": book.description
             })
-        return jsonify(books_response)
+        return jsonify(books_response), 200
 
     elif request.method == "POST":
 
@@ -44,7 +44,7 @@ def handle_book(book_id):
     book = Book.query.get(book_id)
 
     if book is None:
-        return make_response("The book you've selected could not be found.", 404)
+        return make_response("The book you've selected0 could not be found.", 404)
 
     if request.method == "GET":
             return {
