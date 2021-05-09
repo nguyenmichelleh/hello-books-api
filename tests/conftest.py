@@ -31,3 +31,13 @@ def two_saved_books(app):
     # db.session.add(ocean_book)
     # db.session.add(mountain_book)
     db.session.commit()
+
+@pytest.fixture
+def one_saved_book(app):
+    #Arrange
+    cookie_book = Book(title="Cookie Book",
+                    description="All things cookies."
+    )
+
+    # db.session.add(cookie_book)
+    # db.session.commit()
